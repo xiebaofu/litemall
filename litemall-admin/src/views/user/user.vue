@@ -59,7 +59,7 @@
         <el-form-item label="手机号码" prop="mobile">
           <el-input v-model="dataForm.mobile"/>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
+        <el-form-item v-if="!dataForm.password" label="密码" prop="password">
           <el-input v-model="dataForm.password" type="password" auto-complete="off"/>
         </el-form-item>
         <el-form-item label="性别" prop="gender">
@@ -121,7 +121,7 @@ export default {
         id: undefined,
         username: '',
         mobile: '',
-        password: undefined,
+        //password: undefined,
         gender: 0,
         userLevel: 0,
         credit: 0,
@@ -135,9 +135,9 @@ export default {
         create: '创建'
       },
       rules: {
-        username: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
-        mobile: [{ required: true, message: '手机号码不能为空', trigger: 'blur' }],
-        password: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
+        username: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
+        ,mobile: [{ required: true, message: '手机号码不能为空', trigger: 'blur' }]
+        //,password: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
       },
       downloadLoading: false,
       genderDic: ['未知', '男', '女'],
@@ -170,7 +170,7 @@ export default {
         id: undefined,
         username: '',
         mobile: '',
-        pass: undefined,
+        //pass: undefined,
         checkPass: undefined,
         gender: 0,
         userLevel: 0,
